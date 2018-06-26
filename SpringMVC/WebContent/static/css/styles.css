@@ -1,0 +1,10 @@
+h2 {
+	text-shadow: 3px 2px rgb(180, 180, 180);
+	color: green;
+	font-size: 16pt;
+}
+
+h3{
+	color: red;
+	font-size: 12pt;
+}

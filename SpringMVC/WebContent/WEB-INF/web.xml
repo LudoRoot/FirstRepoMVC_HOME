@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>SpringMVC</display-name>
+	<servlet>
+		<servlet-name>dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>    
+<!-- 		on declare une seule servlet, qui va dispatcher les requetes -->
+
+		<init-param>
+			<param-name>contextClass</param-name>
+			<param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
+<!-- 			on declare une classe et un contexte pour renseigner ou est la classe de configuration -->
+		</init-param>
+
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>fr.formation.config.WebConfig</param-value>
+		</init-param>
+
+		<load-on-startup>1</load-on-startup>
+<!-- 		on indique quelle servlet on veut charger en premier -->
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/</url-pattern>
+<!-- 		le slash (represente le slash apres le contexte springmvc) indique que toutes les requetes passent par le dispatcher -->
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
